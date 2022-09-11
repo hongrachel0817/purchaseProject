@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採購</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#"></a>
+            <div class="h3 m-0">採購單</div>
+            <a class="navbar-brand m-0" href="index.html"><i class="fa-solid fa-house-chimney-window h2"></i></a>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 my-3">
+                    <label for="date">建立日期：</label>
+                    <input type="date" id="myDate" value=" ">
+                </div>
+                <div class="col-md-4 my-3">
+                    <label for="text">品　　號：</label>
+                    <input type="search" id="td">
+                </div>
+                <div class="col-md-4 my-3">
+                    <label for="text">品　　名：</label>
+                    <input type="text">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4 my-3">
+                    <label for="exampleFormControlSelect2">廠　　商：</label>
+                    <select id="exampleFormControlSelect2">
+                        <option>---請選擇---</option>
+                        <option>供應商1</option>
+                        <option>供應商2</option>
+                        <option>供應商3</option>
+                        <option>供應商4</option>
+                        <option>供應商5</option>
+                    </select>
+                </div>
+                <div class="col-md-4 my-3">
+                    <label for="exampleFormControlSelect1">採購人員：</label>
+                    <select id="exampleFormControlSelect1">
+                        <option>---請選擇---</option>
+                        <option>人員1</option>
+                        <option>人員2</option>
+                        <option>人員3</option>
+                        <option>人員4</option>
+                        <option>人員5</option>
+                    </select>
+                </div>
+                <div class="col-md-4 my-3">
+                    <label for="text">採購單據：</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-danger">查詢</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+
+    <div class="container">
+        <div class="table-responsive table-responsive-md text-nowrap">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">建立日期</th>
+                        <th scope="col">採購單據</th>
+                        <th scope="col">採購人員</th>
+                        <th scope="col">供應商</th>
+                        <th scope="col">狀態</th>
+                        <th scope="col">金額</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022/09/01</td>
+                        <td>20220901000001</td>
+                        <td>人員1</td>
+                        <td>供應商5</td>
+                        <td>已結案</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td>2022/09/01</td>
+                        <td>20220901000002</td>
+                        <td>人員1</td>
+                        <td>供應商1</td>
+                        <td>已結案</td>
+                        <td>$5,000</td>
+                    </tr>
+                    <tr>
+                        <td>2022/09/11</td>
+                        <td><a href="list01.html" target="_blank">20220911000001</a></td>
+                        <td>人員1</td>
+                        <td>供應商2</td>
+                        <td>採購中</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td>2022/09/11</td>
+                        <td><a href="list02.html" target="_blank">20220911000002</a></td>
+                        <td>人員1</td>
+                        <td>供應商3</td>
+                        <td>採購中</td>
+                        <td>$400</td>
+                    </tr>
+                    <tr>
+                        <td>2022/09/11</td>
+                        <td><a href="list03.html" target="_blank">20220911000003</a></td>
+                        <td>人員1</td>
+                        <td>供應商1</td>
+                        <td>採購中</td>
+                        <td>$995</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="row text-right">
+            <div class="col">
+                <button type="button" class="btn btn-outline-info">轉採購單</button>
+            </div>
+        </div> -->
+    </div>
+
+    <P>表格</P>
+    <P>品號</P>
+    <P>品名</P>
+    <P>採購數量</P>
+    <P>金額</P>
+    <P>按鈕：存檔</P>
+
+    <script>
+        // 取今天日期
+        function setInputDate(_id){
+            var _dat = document.querySelector(_id);
+            var hoy = new Date(),
+                d = hoy.getDate(),
+                m = hoy.getMonth()+1, 
+                y = hoy.getFullYear(),
+                data;
+
+            if(d < 10){
+                d = "0"+d;
+            };
+            if(m < 10){
+                m = "0"+m;
+            };
+
+            data = y+"-"+m+"-"+d;
+            console.log(data);
+            _dat.value = data;
+        };
+
+        setInputDate("#myDate");
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

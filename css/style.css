@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+input, select{
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #555;
+    border-radius: 10px;
+    outline: none;
+}
+input:focus {
+    background-color: lightblue;
+}
+
+.checkmark{
+    height: 25px;
+    width: 25px;
+}
+
+.table th, .table td{
+    vertical-align: middle;
+}
