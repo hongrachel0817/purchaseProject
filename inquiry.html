@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#"></a>
-            <div class="h3 m-0">詢價</div>
+            <div class="h3 m-0">詢價/比價 看版</div>
             <a class="navbar-brand m-0" href="index.html"><i class="fa-solid fa-house-chimney-window h2"></i></a>
         </nav>
         <div class="container-fluid">
@@ -24,28 +24,18 @@
                     <input type="date" id="myDate" value=" ">
                 </div>
                 <div class="col-md-4 my-3">
-                    <label for="text">品　　號：</label>
-                    <input type="search" id="td">
-                </div>
-                <div class="col-md-4 my-3">
-                    <label for="text">品　　名：</label>
-                    <input type="text">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 my-3">
                     <label for="exampleFormControlSelect2">廠　　商：</label>
                     <select id="exampleFormControlSelect2">
                         <option>---請選擇---</option>
-                        <option>供應商1</option>
-                        <option>供應商2</option>
-                        <option>供應商3</option>
-                        <option>供應商4</option>
-                        <option>供應商5</option>
+                        <option>廠商1</option>
+                        <option>廠商2</option>
+                        <option>廠商3</option>
+                        <option>廠商4</option>
+                        <option>廠商5</option>
                     </select>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label for="exampleFormControlSelect1">採購人員：</label>
+                    <label for="exampleFormControlSelect1">詢價人員：</label>
                     <select id="exampleFormControlSelect1">
                         <option>---請選擇---</option>
                         <option>人員1</option>
@@ -55,12 +45,12 @@
                         <option>人員5</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                </div>
+            </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <button type="button" class="btn btn-outline-danger">查詢</button>
+                    <button type="button" class="btn btn-outline-danger mr-1">新增</button>
+                    <button type="button" class="btn btn-outline-info">轉採購單</button>
                 </div>
             </div>
         </div>
@@ -69,7 +59,7 @@
 
     <div class="container">
         <div class="table-responsive table-responsive-md text-nowrap">
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col"></th>
@@ -78,126 +68,77 @@
                         <th scope="col">目前庫存量</th>
                         <th scope="col">採購數量</th>
                         <th scope="col">定價</th>
-                        <th scope="col">供應商</th>
-                        <th scope="col">單價</th>
                         <th scope="col">單位</th>
-                        <!-- <th scope="col">記錄(單品歷史記錄)</th> -->
+                        <th scope="col">廠商</th>
+                        <th scope="col">進價</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">
+                        <th scope="row" rowspan="2">
                             <label>
                                 <input type="checkbox" class="checkmark">
                             </label>
                         </th>
-                        <td>A0001</td>
-                        <td>身體乳 350ml</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>199</td>
-                        <td>供應商2</td>
+                        <td rowspan="2">A0001</td>
+                        <td rowspan="2">身體乳 350ml</td>
+                        <td rowspan="2">1</td>
+                        <td rowspan="2">5</td>
+                        <td rowspan="2">199</td>
+                        <td rowspan="2">瓶</td>
+                        <td>廠商2</td>
                         <td>100</td>
-                        <td>瓶</td>
-                        <!-- <td><a href="#">記錄</a></td> -->
+                        
                     </tr>
                     <tr>
-                        <th scope="row">
-                            <label>
-                                <input type="checkbox" class="checkmark">
-                            </label>
-                        </th>
-                        <td>A0001</td>
-                        <td>身體乳 350ml</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>199</td>
-                        <td>供應商1</td>
+                        <td>廠商1</td>
                         <td>99</td>
-                        <td>瓶</td>
                     </tr>
                     <tr>
-                        <th scope="row">
+                        <th scope="row" rowspan="2">
                             <label>
                                 <input type="checkbox" class="checkmark">
                             </label>
                         </th>
-                        <td>B0001</td>
-                        <td>化妝水</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>250</td>
-                        <td>供應商2</td>
+                        <td rowspan="2">B0001</td>
+                        <td rowspan="2">化妝水</td>
+                        <td rowspan="2">1</td>
+                        <td rowspan="2">5</td>
+                        <td rowspan="2">250</td>
+                        <td rowspan="2">瓶</td>
+                        <td>廠商2</td>
                         <td>200</td>
-                        <td>瓶</td>
                     </tr>
                     <tr>
-                        <th scope="row">
-                            <label>
-                                <input type="checkbox" class="checkmark">
-                            </label>
-                        </th>
-                        <td>B0001</td>
-                        <td>化妝水</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>250</td>
-                        <td>供應商3</td>
+                        <td>廠商3</td>
                         <td>210</td>
-                        <td>瓶</td>
                     </tr>
                     <tr>
-                        <th scope="row">
+                        <th scope="row" rowspan="3">
                             <label>
                                 <input type="checkbox" class="checkmark">
                             </label>
                         </th>
-                        <td>C0001</td>
-                        <td>造型髮夾</td>
-                        <td>1</td>
-                        <td>10</td>
-                        <td>99</td>
-                        <td>供應商2</td>
+                        <td rowspan="3">C0001</td>
+                        <td rowspan="3">造型髮夾</td>
+                        <td rowspan="3">1</td>
+                        <td rowspan="3">10</td>
+                        <td rowspan="3">99</td>
+                        <td rowspan="3">個</td>
+                        <td>廠商2</td>
                         <td>50</td>
-                        <td>個</td>
                     </tr>
                     <tr>
-                        <th scope="row">
-                            <label>
-                                <input type="checkbox" class="checkmark">
-                            </label>
-                        </th>
-                        <td>C0001</td>
-                        <td>造型髮夾</td>
-                        <td>1</td>
-                        <td>10</td>
-                        <td>99</td>
-                        <td>供應商3</td>
+                        <td>廠商3</td>
                         <td>40</td>
-                        <td>個</td>
                     </tr>
                     <tr>
-                        <th scope="row">
-                            <label>
-                                <input type="checkbox" class="checkmark">
-                            </label>
-                        </th>
-                        <td>C0001</td>
-                        <td>造型髮夾</td>
-                        <td>1</td>
-                        <td>10</td>
-                        <td>99</td>
-                        <td>供應商5</td>
+                        <td>廠商5</td>
                         <td>60</td>
-                        <td>個</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="row text-right">
-            <div class="col">
-                <button type="button" class="btn btn-outline-info">轉採購單</button>
-            </div>
         </div>
     </div>
 
